@@ -11,7 +11,9 @@ function useCmd(s)
 const { argv } = require('process');
 const execSync = require('child_process').execSync;
 
-for (let i = 2; i < argv.length; i++){
+for 
+(
+    let i = 2; i < argv.length; i++){
     const value = "" + process.argv[i];
     const facCommand = `node factor.js ${value}`;
     let result = useCmd(facCommand);
