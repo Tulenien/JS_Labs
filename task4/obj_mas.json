@@ -1,0 +1,30 @@
+{"mas":
+    [
+        {
+            "first":1
+        },
+        {
+            "second":1
+        },
+        {
+            "third":
+            {
+                "in1":
+                {
+                    "in2":"something"
+                }
+            }
+        },
+        {
+            "ob":
+            {
+                "ob1":"I have the high ground",
+                "R2D2":"AFFC ADDA AFFF FFFF FF00 0010",
+                "others":
+                {
+                    "Jedi":"Let the fourth be with u, three is cool not"
+                }
+            }
+        }
+    ]
+}

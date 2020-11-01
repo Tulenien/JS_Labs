@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Ученики</title>
+</head>
+<body>
+    
+<h2>
+    {{description}}
+</h2>
+
+{{#each pupils}}
+    <div style="background: yellow; margin-bottom: 15px; padding: 8px;">
+        Фамилия: {{this.a}} 
+        <br>
+        Имя: {{this.b}} 
+    </div>
+{{/each}}
+
+</body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Chosen games</title>
+</head>
+
+<body>
+
+    <h2>
+        {{description}}
+    </h2>
+
+    {{#each games}}
+    <div style="background: rgb(17, 98, 136); margin-bottom: 15px; padding: 8px; width:10%;">
+        <h2 style="color: silver;">
+            {{this.title}}
+        </h2>
+        <div id = "age"  style="color: silver; background-color:slateblue">
+            {{this.age_restriction}}
+        </div style="color: silver; font-family:'Courier New', Courier, monospace;font-style: italic;">
+        <div id = "description">
+            Description: {{this.description}}
+        </div>
+    </div>
+    {{/each}}
+
+</body>
+
+</html>

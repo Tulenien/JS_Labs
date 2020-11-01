@@ -1,0 +1,16 @@
+{
+  "name": "task4",
+  "version": "1.0.0",
+  "description": "",
+  "main": "(4)mas_create.js",
+  "dependencies": {
+    "express": "^4.17.1"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "start": "node (4)mas_create.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}

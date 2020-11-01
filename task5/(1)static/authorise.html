@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <link rel="stylesheet" href="/style.css">
+        <title>Авторизация</title>
+    </head>
+    <body>
+        <h1>Форма регистрации</h1>
+        <p>email:</p>
+        <input id="mail" type="text" spellcheck="false" autocomplete="off">
+        <p>telephone:</p>
+        <input id="telephone" type="text" spellcheck="false" autocomplete="off">
+        <p>surname:</p>
+        <input id="surname" type="text" spellcheck="false" autocomplete="off"><br>
+        <button onclick="saveAuth()">Сохранить</button>
+        <br>
+        <h3 id="message"></h3>
+        <script>
+            "use strict";
+
+            function ajaxPost(url, body, callback)
+            {
+                let r = new XMLHttpRequest();
+                r.open("POST", url, true);
+                r.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
+                r.send(body);
+                r.onload = function()
+                {
+                    callback(r.response);
+                }
+            }
+
+            function saveAuth()
+            {
+                const message = document.getElementById("message");
+                const mail = (document.getElementById("mail")).value;
+                const telephone = (document.getElementById("telephone")).value;
+                const surname = (document.getElementById("surname")).value;
+                ajaxPost("/save", JSON.stringify({mail, telephone, surname}), function(str_res)
+                {
+                    const obj = JSON.parse(str_res);
+                    const res = obj.result;
+                    message.innerHTML = `Last request: ${res}`;
+                    alert(res);   
+                })
+            }
+        </script>
+    </body>
+</html>

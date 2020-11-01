@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <link rel="stylesheet" href="/style.css">
+        <title>Авторизация</title>
+    </head>
+    <body>
+        <p>Введите почту:</p>
+        <input id="mail" type="text" spellcheck="false" autocomplete="off">
+        <button onclick="get_human()">Искать</button>
+        <br>
+        <h3 id="message"></h3>
+        <script>
+            "use strict";
+
+            function ajaxGet(url, callback)
+            {
+                let r = new XMLHttpRequest();
+                r.open("GET", url, true);
+                r.setRequestHeader("Content-Type", "text/plain;charset=UTF-8");
+                r.send(null);
+                r.onload = function()
+                {
+                    callback(r.response);
+                }
+            }
+
+            function get_human()
+            {
+                const mail = document.getElementById("mail").value;
+                const message = document.getElementById("message");
+                const url = `/human?mail=${mail}`;
+                ajaxGet(url, function(answer) 
+                {
+                    const obj = JSON.parse(answer);
+                    const res = obj.result;
+                    if (typeof(res) === 'object')
+                    {
+                        const m = res["email"];
+                        const t = res["telephone"];
+                        const s = res["surname"];
+                        message.innerHTML = `Result = email: ${m}, telephone: ${t}, surname: ${s}`;
+                    }
+                    else
+                    {
+                        message.innerHTML = `Result = ${res}`;
+                    }
+                });
+            };
+        </script>
+    </body>
+</html>
