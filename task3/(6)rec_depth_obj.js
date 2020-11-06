@@ -1,5 +1,29 @@
 "use strict";
 
+function maxDepth()
+{
+    let head = {};
+    let maxLevel = 0;
+    let check = true;
+    let current = head;
+    while (check) 
+    {
+        current.newObj = {};
+        maxLevel++;
+        try {
+                const jsonStr = JSON.stringify(head);
+                current = current.newObj;
+            } 
+        catch (error) 
+            {
+                check = false;
+            }
+        }
+        console.log(maxLevel);
+}
+
+maxDepth();
+
 let tree = 
 {
     a:
@@ -99,29 +123,5 @@ function getDepth(obj)
     console.log(result);
 }
 
-
 getDepth(tree);
 
-function maxDepth()
-{
-    let head = {};
-    let maxLevel = 0;
-    let check = true;
-    let current = head;
-    while (check) 
-    {
-        current.newObj = {};
-        maxLevel++;
-        try {
-                const jsonStr = JSON.stringify(head);
-                current = current.newObj;
-            } 
-        catch (error) 
-            {
-                check = false;
-            }
-        }
-        console.log(maxLevel);
-}
-
-maxDepth();
