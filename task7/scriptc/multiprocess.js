@@ -18,6 +18,6 @@ for
     const facCommand = `node factor.js ${value}`;
     let result = useCmd(facCommand);
     result = parseInt(result);
-    console.log("Факториал числа: " + value + " равен: " + result);
+    console.log(value + "! = " + result);
 }
 

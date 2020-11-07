@@ -1,1 +1,1 @@
-{"Hunday Solaris":"500000","BMW":"65241","AUDI":"14500","Ford":"5000","Mazda 5":"800000"}
+{"Hunday Solaris":"500000","BMW":"65241","AUDI":"14500","Ford":"5000","Mazda 5":"800000","Ultramar":"800000000"}
